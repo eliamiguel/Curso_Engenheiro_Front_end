@@ -1,0 +1,40 @@
+.product-item img {
+  largura: 100%;
+  raio da borda: 16px;
+}
+
+.botão do produto {
+  exibição: bloco;
+  cor de fundo: #44bd32;
+  cor: #fff;
+  alinhamento de texto: centro;
+  preenchimento: 8px 0;
+  raio da borda: 8px;
+  margem superior: 8px;
+  decoração de texto: nenhum;
+}
+
+.botão do produto: passe o mouse {
+  cor de fundo: #4cd137;
+}
+
+@tela de mídia e (largura máxima: 1023px) {
+  .container {
+      largura máxima: 80%;
+  }
+
+  .produtos {
+      grade-modelo-colunas: repeat(2, 48,5%);
+      espaçamento entre colunas: 3%;
+  }
+}
+
+@tela de mídia e (largura máxima: 767px) {
+  .produtos {
+      exibição: bloco;
+  }
+
+  .produto-item {
+      margem inferior: 32px;
+  }
+}
