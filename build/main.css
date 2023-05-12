@@ -46,8 +46,7 @@ header .container {
 section {
   padding: 56px 0;
 }
-
-.products {
+section .products {
   margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(3, 32.66%);
@@ -55,7 +54,7 @@ section {
   row-gap: 4%;
   width: 100%;
 }
-.products img {
+section .products img {
   width: 100%;
   border-radius: 16px;
 }

@@ -36,11 +36,9 @@ header {
 
 }
 
-
-
 .menu {
   display: flex;
-   li {
+  li {
   font-weight: bold;
   margin-left: 24px;
 a {
@@ -49,13 +47,9 @@ a {
 }
 }
 }
-
-
-
-
 section {
   padding: 56px 0;
-}
+
 
 .products {
   margin-top: 40px;
@@ -68,7 +62,8 @@ section {
   img {
   width: 100%;
   border-radius: 16px;
-}
+      }
+          }
 }
 
 .product-button {
