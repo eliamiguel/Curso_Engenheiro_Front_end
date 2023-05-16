@@ -7,14 +7,22 @@ const sourcemaps=require('gulp-sourcemaps');
 
 
 function compliarSASS(){
-  return gulp.src('./source/stiles/*main.scss')
-  .pipe()
-}
-function compliarsImagen(){
-  return gulp.src('./source/imagens/*');
-}
-function compliarJS(cb){
-  return compliarJSs(cb);
+  return gulp.src('./source/styles/main.scss')
+  .pipe(sourcemaps.init())
+  .pipe(sass({
+    outputStyle: 'compressed'
+  }))
+  .pipe(sourcemaps.write('./maps'))
+  .pipe(gulp.dest('./build/styles'));
 }
 
-exports.default = gulp.series(compliarSASS, compliarsImagen, compliarJS)
+function compliarsImagen(){
+  return gulp.src('./source/imagens/*')
+  .pipe()
+}
+function compliarJS(cb){
+  return gulp.src('./source/scripts/*.js')
+  .pipe()
+}
+
+exports.sass = compliarSASS;
