@@ -14,11 +14,18 @@
 body{
   background-color: #colors[backgroundColor];
   color: #colors[textColor];
+  li{
+    list-style: none;
+  }
 }
 .container{
   max-width: 960px;
   width: 100%;
   margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
  
 
   @media @breakpointTablet{
@@ -31,7 +38,7 @@ body{
   }
 }
 header {
-  padding: 24px;
+  padding-bottom: 24px;
   
   .profile-avatar{
     display: block;
@@ -62,7 +69,6 @@ header {
   width: 100%;
   margin: 0 auto;
   li{
-    list-style: none;
     img{
       &:hover {
         transition: all ease .3s;
@@ -71,5 +77,29 @@ header {
     }
     
   }
+}
+.projects-list{
+  margin-top: 32px;
+  &-item{
+
+    a{
+      text-decoration: none;
+      background-color: #colors[buttoncolor];
+      display: block;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      text-align: center;
+      color: #colors[textColor];
+      font-weight: bold;
+      border-radius: 30px;
+      border: 2px solid #colors[buttoncolor];
+      transition: all ease .5s;
+      &:hover{
+        color:#colors[buttoncolor];
+        background-color: transparent;
+      }
+    }
+  }
+
 }
 
