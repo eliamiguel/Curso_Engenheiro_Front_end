@@ -1,6 +1,8 @@
 @import "mapas.less";
+
+
 @breakpointMobile: ~"(max-width: 767px)";
-@breakpointTablet: ~"(min-width: 767px)" and "(max-width: 1023px)";
+@breakpointTablet: ~"(min-width: 767px) and (max-width: 1023px)";
 
 *{
   margin: 0;
@@ -21,6 +23,32 @@ li {
   max-width: 1024px;
   width: 100%;
   margin: 0 auto;
+  transition: all ease .7s;
+
+  @media @breakpointTablet{
+    max-width: 90%;
+
+    .container {
+      max-width: 80%;
+    
+    }
+    .products {
+    grid-template-columns: repeat(2, 48.5%);
+    column-gap: 3%;
+    }
+    
+  }
+  @media @breakpointMobile{
+   max-width: 90%;
+    .products {
+      display: block;
+    }
+    .product-item  {
+      margin-bottom: 32px;
+    }
+    
+
+  }
 }
 
 header {
@@ -74,23 +102,5 @@ section {
     &:hover {
       background-color: #colors[backgroundButton];
     }
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .container {
-    max-width: 80%;
-  }
-  .products {
-  grid-template-columns: repeat(2, 48.5%);
-  column-gap: 3%;
-  }
-}
-@media screen and  {
-  .products {
-    display: block;
-  }
-  .product-item  {
-    margin-bottom: 32px;
   }
 }
