@@ -21,6 +21,10 @@ grunt.initConfig({
       less:{
         files:['src/styles/**/*.less'],
         tasks:['less:development']
+      },
+      html:{
+        files:['src/index.html'],
+        tasks:['replace:dev']
       }
     },
     replace:{
@@ -30,6 +34,10 @@ grunt.initConfig({
             {
             match: 'ENDERECO_DO_CSS',
             replacement: './styles/main.css'
+          },
+          {
+            match: 'ENDERECO_DO_JS',
+            replacement: '../src/scripts/main.js'
           }
           ]
         }, 
@@ -47,7 +55,7 @@ grunt.initConfig({
           patterns:[
             {
             match: 'ENDERECO_DO_CSS',
-            replacement: './styles/main.min.css'
+            replacement: './styles/main.css'
           }
           ]
         }, 
@@ -71,16 +79,18 @@ grunt.initConfig({
         'prebuild/index.html': 'src/index.html'
       }
     }
-  }
+  }, 
+  clean:['prebuild']
 })
 
 grunt.loadNpmTasks('grunt-contrib-less');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-replace');
 grunt.loadNpmTasks('grunt-contrib-htmlmin');
+grunt.loadNpmTasks('grunt-contrib-clean');
 
 grunt.registerTask('default', ['watch']);
-grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist']);
+grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean']);
 
 }
 
