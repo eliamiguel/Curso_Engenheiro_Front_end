@@ -4,11 +4,13 @@
 &__control{
   margin-bottom: 16px;
  font-family: sans-serif;
+}
+&__submit{
 
-&--sending{
-  cursor: wait;
-      }
-  
-  }
+  cursor: pointer;
+  &--sending{
+    cursor: wait;
+        }
+}
 
 }
