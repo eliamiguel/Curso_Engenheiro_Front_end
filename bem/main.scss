@@ -1,0 +1,14 @@
+.form{
+  margin: 48px;
+
+&__control{
+  margin-bottom: 16px;
+ font-family: sans-serif;
+
+&--sending{
+  cursor: wait;
+      }
+  
+  }
+
+}
