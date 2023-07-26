@@ -20,5 +20,8 @@ return res.json();
   seguindo.innerHTML= json.following;
   link.href= json.html_url;
 })
+.catch(function(erro){
+  alert("Ocorreu um erro na busca do endereço, tente novamente")
+})
 
 })
