@@ -1,30 +1,24 @@
-// document.addEventListener("DOMContentLoaded", function(){
-// document.getElementById("btn-buscar-cep").addEventListener('click', function(){
+document.addEventListener('DOMContentLoaded', function(){
+  const image = document.querySelector('#image');
+  const nome = document.querySelector('#nome');
+  const sobrenome = document.querySelector('#sobrenome');
+  const repositorio = document.querySelector('#repositorio');
+  const seguidores = document.querySelector('#seguidores');
+  const seguindo = document.querySelector('#seguindo');
+  const link = document.querySelector('#link')
 
-//   const xhttp = new XMLHttpRequest();
-//   const cep = document.getElementById('cep').value;
-//   const endpoint = `https://viacep.com.br/ws/${cep}/json`;
-
-//   xhttp.open("GET", endpoint);
-//   xhttp.send();
-
-//   });
-
-// });
-$(document).ready(function(){
-
-$('#btn-buscar-cep').click( function(){
-
-    const cep = $('#cep').val();
-    const endpoint = `https://viacep.com.br/ws/${cep}/json`;
-
-    $.ajax(endpoint).done(function(resposra){})
-
-  })
-$('#formulario-pedido').submit(function(evento){
-  evento.preventDefault();
-  if ($('#none').val().length==0){
-    throw new error('digite o nome');
-  }
+fetch('https://api.github.com/users/eliamiguel')
+.then(function(res){
+return res.json();
 })
+.then( function(json){
+  image.src = json.avatar_url;
+  nome.innerHTML= json.name;
+  sobrenome.innerHTML= json.login;
+  repositorio.innerHTML= json.public_repos;
+  seguidores.innerHTML= json.followers;
+  seguindo.innerHTML= json.following;
+  link.href= json.html_url;
+})
+
 })
