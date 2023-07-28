@@ -97,3 +97,4 @@ console.log(versao instanceof Array)
 console.log(Object.values(dipositivos));
 console.log(Object.keys(dipositivos));
 console.log(Object.values(dipositivos).length);
+
