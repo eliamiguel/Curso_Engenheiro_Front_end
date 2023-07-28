@@ -62,3 +62,38 @@ function Endereco( cidade, bairro, rua, cep){
 }
 const enderocoisa = new Endereco ("redençaõo", "centro", "jão", 235659);
 console.log(enderocoisa);
+
+function Dipositivos(computador,celular, tablete, versao){
+  this.computador = computador;
+  this.celular =celular;
+  this.tablete = tablete;
+  this.versao = versao;
+  this.potencia = function(){
+    console.log("potencia")
+  }
+}
+const DipositivosMateus1 = new Dipositivos("PHP", "Xiaome", "Ipad", 2.7)
+console.log(DipositivosMateus1);
+
+
+
+
+const dipositivos = {
+  computador:"PHP",
+  celular : "Xiaome",
+  tablete:"Ipad",
+  versao: [2.7, 1.1, 5.3, 7.2],
+}
+  const computador = "PHP";
+  const celular = "Xiaome";
+  const tablete = "Ipad";
+  const versao = [2.7, 1.1, 5.3, 7.2];
+
+console.log(typeof computador)
+console.log(typeof celular)
+console.log(typeof tablete)
+console.log(versao instanceof Array)
+
+console.log(Object.values(dipositivos));
+console.log(Object.keys(dipositivos));
+console.log(Object.values(dipositivos).length);
