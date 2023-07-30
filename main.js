@@ -1,20 +1,41 @@
-function ContaBancaria(saldo, titular, numero, depositar, sacar, consultar){
+function conta(titular, numero_conta, saldo){
+  this.titular = titular;
+  this.numero_conta = numero_conta;
   this.saldo = saldo;
-  this.titular = titular; 
-  this.numero = numero;
-  this.depositar = function (){
-    console.log('Realiza um depósito na conta, aumentando o saldo.')
-  };
-  this.sacar = function () {
-    console.log('Realiza um saque na conta, diminuindo o saldo.')
-  };
-  this.consultar = function() {
-    console.log('Retorna o saldo atual da conta.')
-  }
+  
+
 }
+function ContaCorrente(titular, numero_conta, saldo, limite){
+  conta.call(this, titular, numero_conta, saldo);
+  let _limite = limite;
+  this.getLimite = function (){
+   return _limite;
+    
+  };
+}
+function ContaPoupanca (titular, numero_conta, saldo, juros){
+  conta.call(this, titular, numero_conta, saldo)
+  let _juros = juros;
+  this.getJuros = function (){
+    return _juros;
+    
+  };
+}
+const contaCorrente1= new  ContaCorrente("Maria", 1000-1000-1000-1000, 7000.00, 8000.00);
+const contaPoupaca1= new ContaPoupanca("Maria", 1111-1111-1111-1111, 1000.00, 0.10);
+const contaPoupaca2= new ContaPoupanca("João", 2222-2222-2222-2222, 2000.00, 0.20)
 
-const contaMaria = new ContaBancaria(7000, "Maria", 5987-8948-3564-7984);
-const contaMatheus = new ContaBancaria(800, "Matheus", 1000-1000-1000-1000);
+console.log(contaCorrente1);
+console.log(contaPoupaca1)
+console.log(contaPoupaca2);
+console.log(contaPoupaca1.getJuros());
+console.log(contaPoupaca2.getJuros());
 
-console.log(contaMaria);
-console.log(contaMatheus);
+
+
+
+
+
+
+
+
