@@ -20,6 +20,13 @@
 
 function Pessoa(nome){
   this.nome = nome;
+  
+}
+
+function Funcionario(nome, cargo, salario){
+  this.cargo =cargo;
+  this.salario =salario;
+  Pessoa.call(this, nome);
   this.dizOi= function (){
     console.log("Nome: " + this.nome);
   }
@@ -29,12 +36,6 @@ function Pessoa(nome){
   this.dizSalario= function (){
     console.log("Cargo: " + this.salario);
   }
-}
-
-function Funcionario(nome, cargo, salario){
-  this.cargo =cargo;
-  this.salario =salario;
-  Pessoa.call(this, nome);
 }
 const funcionario1 = new Funcionario("Maria", "Dev Front-end", 5000);
 const funcionario2 = new Funcionario("João", "Dev back end", 10000);
