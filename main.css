@@ -57,7 +57,7 @@ header .container {
   text-decoration: none;
 }
 input:focus{
-  color:  var(--bg-color);
+  color: red;
 }
 
 
