@@ -23,3 +23,46 @@ console.log(carro1)
 console.log(carro2)
 carro1.motor();
 
+const Carros =['Kia', 'Toyota', 'Mercedes', 'Huydai'];
+
+for (let i =  0; i < Carros.length; i++){
+  console.log(Carros[i])
+}
+
+
+Carros.forEach(function(item1){
+  console.log(item1)
+});
+
+const Animais =['Cachorro', 'gato', 'leão', 'Macaco']; 
+const animais1 = Animais.map(function(item){
+  return {
+    nome:item,
+    raca:'Pastor alemão',
+  }
+})
+console.log(animais1)
+animais1.push({
+  nome:'passaro',
+  raca:'papagaio',
+})
+console.log(Object.keys(animais1));
+console.log(Object.values(animais1));
+const procura = animais1.find(function(itemAtual){
+  return itemAtual.nome == 'passaro';
+}); 
+console.log(procura);
+const todosAminaisaoa = animais1.every(function(item1){
+  return item1.raca == 'Pastor alemão';
+})
+console.log(todosAminaisaoa);
+const umAminaispapagaio = animais1.some(function(item1){
+  return item1.raca == 'papagaio';
+})
+console.log(umAminaispapagaio);
+const numero = [20,30, 40,30];
+ const numeros = numero.reduce(function(aculumador, item2){
+  return aculumador +=item2
+ })
+ console.log(numeros);
+
