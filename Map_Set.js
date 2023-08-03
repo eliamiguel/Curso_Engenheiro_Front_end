@@ -42,3 +42,4 @@ for(let chaves of meuSet.keys()){
   const ArraySemRepitiçao = [...ArraySemSet]
 
   console.log(ArraySemRepitiçao)
+  
