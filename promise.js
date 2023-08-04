@@ -1,33 +1,30 @@
-const promiseSemParametros = new Promise ((resolve, reject)=> {
-  try{
-    let some =0; 
-    for (let i=0; i <1000000000; i++){
-      some ++
+const promiseSemParametros = new Promise((resolve, rejact)=>{
+
+  try {
+    let soma = 0;
+    for (let i =0; i < 100000; i++){
+      soma++
     }
-    resolve(some)
+   resolve (soma)
   }catch(e){
-    reject('Todos os numero estão errados')
+    rejact('erro, na digitação do numero')
   }
-}); 
+})
 
 
-
-
-
- const comParametro = (login, senha ) => {
-  return new Promise((resolver, rejeitar)=>{
-    setTimeout(()=> {
-      resolver(`Logado com o Usuario ${login}`)
-    })
+executar();
+ const comparametros = (login, senha) => {
+ return new Promise((resover, rejeitar)=>{
+    setTimeout(() => {
+      resover(`Voce logo com o: ${login} e a senha ${senha}`)
+      
+    }, 3000)
   })
  }
+ comparametros('eliasperreiramiguel@gmail.com', 12364659).then(resposta => console.log(resposta))
 
- comParametro('eliasperreiramiguel@gmail.com', 12345).then(resultar => console.log(resultar));
-
-
- async function executador (){
+ async function executar(){
   console.log('Inicio')
- await promiseSemParametros.then(resultado => console.log(resultado)).catch(erro=> console.log(erro))
+  await promiseSemParametros.then(resposta => console.log(resposta)).catch(erro => console.log(erro))
   console.log('fim')
- }
- executador();
+  }
