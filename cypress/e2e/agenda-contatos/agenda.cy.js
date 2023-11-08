@@ -6,11 +6,11 @@ describe('Testes para agenda', ()=>{
   } )
 
   it('Deve incluir os dados na agenda', ()=>{
-    cy.get('.adicionar').click()
     cy.get('input').should('have.length', 3)
     cy.get('[type="text"]').type('agenta de contato')
     cy.get('[type="email"]').type(' agenta@gmail.com')
     cy.get('[type="tel"]').type('11 2222 3333 4444')
+    cy.get('.adicionar').click()
     
   }) 
   it('Deve alterar contato', ()=>{
@@ -18,6 +18,7 @@ describe('Testes para agenda', ()=>{
     cy.get('[type="text"]').should('not.contain', 'agenta de contato')
     cy.get('[type="email"]').should('not.contain', 'agenta@gmail.com')
     cy.get('[type="tel"]').should('not.contain', '11 2222 3333 4444')
+    cy.get('.alterar').click()
     
   }) 
     
